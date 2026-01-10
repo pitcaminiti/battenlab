@@ -1,25 +1,22 @@
 
 export interface BattenInputs {
-  testWeight: number;      // kg
-  testLength: number;      // mm
-  
-  // Point measurements
-  self14: number;          // mm
-  self12: number;          // mm
-  self34: number;          // mm
-  
-  weighted14: number;      // mm
-  weighted12: number;      // mm
-  weighted34: number;      // mm
+  testWeight: number;
+  testLength: number;
+  self14: number;
+  self12: number;
+  self34: number;
+  weighted14: number;
+  weighted12: number;
+  weighted34: number;
 }
 
 export interface BattenResults {
-  frontPercent: number;    // %
-  backPercent: number;     // %
-  camberPercent: number;   // %
-  averageEi: number;       // N·m²
-  deflection: number;      // Net mm (at center)
-  draftPosition: number;   // % from front
+  frontPercent: number;
+  backPercent: number;
+  camberPercent: number;
+  averageEi: number;
+  deflection: number;
+  draftPosition: number;
 }
 
 export interface SavedProfile {
@@ -27,4 +24,21 @@ export interface SavedProfile {
   name: string;
   inputs: BattenInputs;
   date: string;
+}
+
+export interface BattenSegment {
+  length: number;
+  ei: number;
+}
+
+export interface FEMCalibrationInputs {
+  weightKg: number;
+  lengthMm: number;
+  deflectionsMm: number[];
+}
+
+export interface FEMCalibrationResults {
+  eiSegments: number[];
+  eiAverage: number;
+  error: number;
 }
